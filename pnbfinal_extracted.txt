@@ -1,0 +1,857 @@
+ 
+Date: 11 March,  2026  
+ 
+Software Requirement  Specification (SRS) 
+ 
+PSB Hackathon  2026  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Software Requirement  Specification 
+Version 1 
+ 
+ 
+ 
+ 
+ 
+Project Name: Quantum-Proof Systems Scanner 
+Team Name: ASE 
+Institute  Name: Punjab Engineering College 
+ 
+Revision History 
+ 
+Version No Date Prepared  by/ 
+Modified by 
+Significant Changes 
+Draft V1.0 11 
+March,2026 
+Keshav Dham, 
+Matisha Kansal, Pavni 
+Gupta, Mayank 
+Initial SRS Draft 
+ 
+Declaration  
+The purpose of this Software Requirements Speci fication (SRS) document is to 
+identify and document the user requirements for the “Quantum-Proof Systems 
+Scanner” The end deliverable software that will be supplied by ASE will comprise 
+of all the requirements documented in the current document and will be operated 
+in the manner specified in the document. The Source code  will be developed 
+subsequently based on these requirements and will formally go through code review 
+during testing process.  
+Mentor Details (if any):  
+ 
+Punjab  Engineering College, Chandigarh  
+Signature: 
+Date: 
+Dr. Kanu Goel 
+Assistant Professor 
+ Team Member Details: 
+ 
+Member 1  : 
+Keshav Dham 
+Punjab 
+Engineering 
+College 
+Member 2  : 
+Matisha Kansal 
+Punjab 
+Engineering 
+College 
+Member 3  :  
+Pavni Gupta 
+Punjab 
+Engineering 
+College 
+Member 4 : 
+Mayank  
+Punjab 
+Engineering 
+College 
+Signature: 
+Date: 
+Signature: 
+Date: 
+Signature: 
+Date: 
+Signature: 
+Date: 
+Team Lead Developer  Developer  Developer  
+ 
+Table of Content 
+1. Introduction  
+1.1. Purpose 
+1.2. Scope 
+1.3. Intendent Audience 
+2. Overall Description 
+2.1. Product Perspective 
+2.2. Product Functions 
+2.3. User Classes and Characteristics 
+2.4. Operating Environment 
+2.5. Design and Implementation Constraints 
+2.6. Assumptions and Dependencies 
+3. Specific Requirements  
+3.1. Functional Requirements 
+ 
+3.2. External Interface Requirements 
+ 
+3.2.1. User Interfaces 
+3.2.2. Hardware Interfaces 
+3.2.3. Software/ Communication Interfaces 
+3.3. System Features 
+3.4. Non-functional Requirements 
+3.4.1. Performance Requirements 
+3.4.2. Software Quality Attributes 
+3.4.3. Other Non-functional Requirements 
+ 
+4. Technological  Requirements  
+4.1. Technologies used in development of the web application 
+ 
+4.2.I.D.E. (Integrated Development Environment) 
+ 
+4.3.Database Management Software 
+ 
+5. Security Requirements  
+ 
+Software Requirement  Specification (SRS) 
+ 
+ 
+❖ Introduction  
+ 
+ 
+      1.1 Purpose 
+The purpose of this Software Requirements Specification (SRS) document is to 
+identify and document the user requirements for Quantum -Proof Systems 
+Scanner. This document  provides a comprehensive description of the system 
+requirements, expected functionality, and operational behavior of the proposed 
+solution. It acts as a formal reference for stakeholders including system 
+developers, cybersecurity teams, administrators, and management involved in 
+the planning, design, development, and de ployment of the system. 
+The SRS establishes a clear understanding of how the system will operate, the 
+services it will provide, and the constraints under which it will function. It also 
+serves as a baseline for system design, implementation, testing, and future 
+enhancements. 
+This document is prepared  with the following objectives: 
+• To describe the behavior and operational functionality of the system. 
+• To define the functional and non-functional requirements of the system. 
+• To provide process flow charts and workflow representations for 
+understanding system operations. 
+• To provide a structured reference for system design, development, testing, 
+and deployment. 
+• To ensure that the system meets the required cybersecurity, compliance, 
+and operational standards for identifying and managing cryptographic 
+configurations in public-facing applications. 
+ 
+ 
+   1.2 Scope 
+The proposed system Quantum -Proof Systems Scanner is designed to enhance 
+the cybersecurity posture of public-facing banking applications by identifying 
+cryptographic implementations and evaluating their readiness against emerging 
+quantum computing threats. The system will function as an automated scanning 
+and monitoring platform capable  of discovering cryptographic assets, analyzing 
+security configurations, and providing actionable insights for improving 
+cryptographic resilience. 
+The scope of the system includes the following functionalities: 
+ 
+• Discover cryptographic inventory associated with public-facing 
+applications, including TLS certificates, VPN endpoints, and APIs 
+exposed to the internet. 
+• Identify and analyze cryptographic controls implemented within the 
+system, such as cipher suites, key exchange mechanisms, encryption algorithms, 
+and TLS protocol versions. 
+• Validate whether the deployed cryptographic algorithms and 
+configurations comply with Post-Quantum Cryptography (PQC) standards 
+recommended by the National Institute of Standards and Technology (NIST). 
+• Generate detailed Cryptographic Bill of Materials (CBOM) inventory for 
+identified assets in accordance with guidelines provided by Indian Computer 
+Emergency Response Team (CERT-In). 
+• Provide actionable recommendations and remediation guidance for assets 
+that are not compliant with PQC standards or contain weak cryptographic 
+configurations. 
+• Issue automated digital labels and security status indicators such as 
+Quantum-Safe, PQC Ready, or Fully Quantum Safe based on the cryptographic 
+posture of each scanned asset. 
+• Provide an enterprise-wide centralized management console through a 
+secure graphical user interface (GUI) that allows administrators and 
+cybersecurity teams to monitor, manage, and analyze the cryptographic status of 
+all scanned public-facing applications. 
+• Display risk ratings and security scores (High, Medium, Low) for each 
+application based on its cryptographic configuration and compliance status. The 
+dashboard dynamically reflects changes in security posture whenever 
+cryptographic configurations are updated or vulnerabilities are identified. 
+• Enable reporting and visualization of scanning results, cryptographic 
+inventory, compliance status, and recommendations through the centralized 
+dashboard interface. 
+ 
+ 
+1.3 Intended  Audience  
+The intended audience of this document includes business stakeholders and 
+technical users from Punjab National Bank (PNB) who are involved in cybersecurity 
+operations, system administration, compliance management, and digital 
+infrastructure management. 
+This document is primarily intended for the following groups: 
+• Cybersecurity Teams responsible for monitoring and improving the 
+security posture of banking applications.  
+ 
+• System Administrators and IT Operations Teams responsible for 
+deploying, configuring, and maintaining the system infrastructure. 
+• Compliance and Risk Management Teams responsible for ensuring that 
+banking systems comply with security standards and regulatory requirements. 
+• Software Developers  and System Architects involved in the 
+design and development of the proposed solution.  
+• Project Managers and Decision Makers who require an overview of the 
+system’s capabilities, scope, and operational objectives. 
+ 
+The document serves as a reference  guide for understanding the system 
+requirements, operational  workflow, and security capabilities of the proposed  
+solution. 
+ 
+❖ Overall Description 
+ 
+2.1 Product Perspective  
+The proposed system Quantum-Proof Systems Scanner is designed as an 
+advanced cybersecurity solution aimed at identifying, analyzing, and managing 
+cryptographic implementations used in public-facing banking applications. It 
+functions as a centralized scanning and monitoring platform capable of detecting 
+cryptographic configurations, evaluating their security posture, and assessing 
+their readiness against emerging threats posed by quantum computing.  
+The system operates as a security assessment and compliance  tool that 
+integrates with  existing banking infrastructure without disrupting live 
+services. It continuously analyzes internet-exposed assets, including: 
+• Web servers 
+• APIs 
+• VPN gateways 
+• Other externally accessible services 
+ 
+Through  this analysis, the platform detects and evaluates: 
+ 
+• Cryptographic protocols 
+• SSL/TLS certificate configurations 
+• Encryption mechanisms used in secure communication 
+ 
+The proposed  solution follows a modular architecture  consisting of several 
+specialized components: 
+• Asset Discovery Module – identifies and catalogs internet-facing assets. 
+• Cryptographic Scanner – detects cryptographic protocols, cipher 
+suites, and certificates in use. 
+ 
+• Post-Quantum Cryptography (PQC) Validator – evaluates the 
+readiness of current cryptographic systems against quantum 
+computing threats. 
+• Cryptographic Bill of Materials (CBOM) Generator – generates a 
+structured inventory of cryptographic components used across applications. 
+• Enterprise Monitoring Dashboard – provides a centralized 
+interface for monitoring risks, viewing analytics, and generating 
+compliance reports. 
+ 
+The system aligns with Post-Quantum Cryptography (PQC) recommendations 
+from the National Institute of Standards and Technology (NIST) and 
+generates cryptographic  inventories following CBOM guidelines issued by the 
+Indian  Computer Emergency Response Team (CERT -In). 
+ 
+By enabling automated  detection,  classification, and reporting of 
+cryptographic assets , the system helps organizations proactively prepare 
+for the transition to quantum -safe cryptographic systems . The product 
+ultimately functions as an enterprise-level monitoring platform that 
+provides centralized visibility, risk evaluation, and compliance  
+reporting for public-facing applications within the banking ecosystem. 
+ 
+2.2 Product Functions 
+ 
+The proposed system will perform a set of advanced functions designed to 
+detect cryptographic implementations and evaluate their security posture 
+in relation to quantum -safe standards. The major functions of the system 
+include the following: 
+• Asset Discovery: Identify and catalogue public-facing applications 
+such as web servers, APIs, VPN gateways, and other internet -
+exposed services.  
+• Cryptographic Inventory Discovery : Extract and document 
+cryptographic elements including TLS certificates, encryption 
+algorithms, cipher suites, key exchange mechanisms, and TLS protocol 
+versions used by the identified assets. 
+• Cryptographic Analysis: Analyze the detected cryptographic 
+configurations to identify weak, deprecated, or non -compliant 
+encryption mechanisms. 
+ 
+• Post-Quantum Cryptography Validation: Evaluate cryptographic 
+algorithms against PQC standards defined by the National Institute of 
+Standards and Technology (NIST) to determine their resistance against 
+potential quantum computing attacks.
+ 
+• CBOM Generation : Automatically generate a Cryptographic Bill of 
+Materials (CBOM) containing a detailed inventory of cryptographic 
+assets and  configurations as recommended by Indian Compute     Emergency 
+Response Team (CERT -In). 
+• Risk Assessment and Scoring: Assign risk ratings such as High, 
+Medium, or Low to each application based on the strength of its 
+cryptographic con figuration and its compliance with PQC standards. 
+• Recommendation  Engine: Provide remediation guidance and 
+actionable recommendations for systems that are not compliant 
+with quantum-safe cryptographic standards.  
+• Quantum-Safe Certification: Automatically issue digital security 
+labels such as Quantum-Safe, PQC Ready, or Fully Quantum Safe for 
+applications that meet predefined cryptographic requirements. 
+• Enterprise Monitoring Dashboard: Provide a centralized graphical 
+console that displays the real -time security posture, scanning results, 
+cryptographic inventory, and compliance status of all monitored 
+systems. 
+• Reporting and Exporting : Generate detailed security reports and 
+export them in machine-readable formats such as JSON, XML, and CSV 
+for integration with other security monitoring systems.  
+ 
+2.3 User Classes and Characteristics  
+The proposed system Quantum-Proof Systems Scanner will be accessed by 
+different categories  of users within the organization, each having speci fic 
+responsibilities and access privileges. The users are expected to possess varying 
+levels of technical knowledge related to networking, cybersecurity, and 
+cryptographic systems. Access to system features will be controlled through role -
+based access mechanisms to ensure secure and controlled usage of the platform.  
+The major user classes and their characteristics are described below: 
+Primary Users 
+• Bank Cybersecurity  Teams: 
+These users are responsible for monitoring the security posture of public -
+facing banking applications. They use the system to perform 
+cryptographic scans, 
+ 
+analyze TLS con figurations, detect vulnerabilities, and evaluate the 
+readiness of systems against quantum computing threats. They are 
+expected to have strong technical knowledge of cybersecurity practices, 
+cryptographic protocols, and network security mechanisms.  
+ 
+ 
+• IT Administrators: 
+IT administrators manage system configuration, infrastructure 
+deployment, and overall operational management of the platform. They are 
+responsible for configuring scanning parameters, maintaining system 
+availability, managing user access privileges, and ensuring the proper 
+functioning of the system within the banking network environment.  
+Secondary  Users 
+• Compliance  Auditors: 
+Compliance auditors use the system to review security reports, CBOM 
+inventories, and compliance status of public -facing applications. Their 
+primary role is to ensure that cryptographic implementations follow 
+security standards and regulatory guidelines. They generally require read-
+only access to reports and dashboards.  
+ 
+ 
+• Risk Managers: 
+Risk management teams analyze security risk levels associated with 
+cryptographic configurations identified by the system. They evaluate risk 
+ratings such as High, Medium, or Low and use the generated 
+recommendations to plan mitigation strategies and improve the 
+organization's overall cybersecurity posture. 
+ 
+ 
+User Type Organization Description Menus / Access Rights 
+Admin 
+User 
+PNB / IIT 
+Kanpur Officials 
+Responsible for system 
+configuration, user 
+management, scan 
+scheduling, and overall 
+monitoring of the platform. 
+Full system access 
+including configuration, 
+scanning, reporting, and 
+dashboard  management. 
+PNB 
+Checker  
+PNB 
+Cybersecurity 
+Team 
+Responsible for performing 
+cryptographic scans, 
+analyzing results, and 
+reviewing CBOM reports 
+for public-facing 
+applications. 
+Access to scanning tools, 
+asset inventory, risk 
+reports, and monitoring 
+dashboard.  
+ 
+ 
+2.4 Operating Environment  
+ 
+The operating environment for the Quantum-Proof Systems Scanner consists of 
+the hardware and software infrastructure required for the deployment, 
+execution, and operation  of the system. The system will be deployed within a 
+secure banking network environment and will support centralized monitoring 
+and scanning of public -facing applications. 
+The operating environment for the system is listed below: 
+• Server System: High-availability enterprise server or virtual machine 
+infrastructure capable of supporting large -scale network scanning and 
+cryptographic analysis. The server must support secure communication 
+and high processing capability to handle multiple scanning tasks 
+simultaneously. 
+• Operating System : Linux-based operating systems such as Ubuntu 
+Server, Red Hat  Enterprise Linux (RHEL), or CentOS are recommended 
+due to their stability, security features, and compatibility with 
+cybersecurity tools. 
+• Database : A relational database management system such as 
+PostgreSQL or MySQL  will be used to store cryptographic inventory 
+data, scan results, CBOM records, user activity logs, and security 
+reports. 
+• Platform: The system will operate as a web -based application platform 
+accessible through a secure browser interface. It will support centralized 
+access for administrators and cybersecurity teams through an 
+enterprise dashboard.  
+ 
+• Technology: The system will be developed using modern web 
+technologies and cybersecurity tools such as Python / Java for backend 
+processing, RESTful services for communication, and HTML5, CSS, and 
+JavaScript for the frontend interface.  Cryptographic analysis tools and 
+security libraries will be integrated to support TLS scanning and 
+algorithm validation. 
+• API: The system will utilize secure REST APIs for communication 
+between modules, integration with external security tools, and 
+interaction with the enterprise  dashboard.  APIs will also enable 
+automated data exchange with other security monitoring systems if 
+required. 
+• This operating environment ensures that the proposed  system can 
+operate ef ficiently, securely, and reliably within the banking 
+infrastructure while supporting advanced cryptographic scanning 
+and monitoring capabilities. 
+ 
+ 
+2.5 Design and Implementation Constraints  
+The design and implementation of the proposed system Quantum-Proof Systems 
+Scanner must follow certain technical, security, performance, and usability constraints 
+to ensure that the solution operates effectively within the banking infrastructure while 
+maintaining high standards of reliability, security, and compliance.  
+1. Technical  Constraints (For Deployment)  
+• Network Configuration: 
+The application must support private (intranet) IP addressing and operate 
+within the secure banking network environment. Appropriate firewall 
+configurations, routing rules, and network security controls must be 
+implemented to allow controlled scanning of public -facing assets without 
+exposing internal systems. 
+• Hosting Environment:  
+The system should be deployed within the bank’s internal intranet infrastructure 
+or a secure enterprise server environment. External access to the system should 
+be restricted and controlled through secure authentication mechanisms.  
+• Integration Constraints: 
+The system must be capable of integrating with existing banking infrastructure 
+such as security monitoring systems, asset management tools, and compliance 
+reporting systems without disrupting existing operations.  
+ 
+ 
+ 
+2. Security Constraints  
+• Access Control: 
+The system must implement Role -Based Access Control (RBAC) to ensure that 
+users can only access functionalities relevant to their roles, such as administrator 
+access, security analyst access, or auditor access.  
+• Data Encryption:  
+All data transmitted between system components and users must be protected 
+using secure communication protocols such as HTTPS with TLS encryption to 
+ensure con fidentiality and integrity of sensitive information. 
+• Authentication  and Authorization:  
+Secure authentication mechanisms must be implemented to verify user identity 
+and ensure authorized access to system resources.  
+ 
+2.6 Assumptions and Dependencies  
+ 
+• Assumptions: 
+ 
+Standard Browser Support - e.g. It is assumed that end users will be accessing 
+the application using HTML5 -compliant browser such as Google Chrome. 
+• Dependencies:  
+ 
+Database System -e.g. The application is dependent on Oracle database for data 
+storage. Any maintenance, downtime, or performance issues with the database 
+will directly impact on the application's functionality. 
+ 
+Examples: 
+• Assumes TLS-based communication is used in all public-facing 
+applications. 
+• Depends on NIST PQC algorithms being standardized and available. 
+• Assumes internet connectivity for scanning endpoints. 
+ 
+ 
+ 
+❖ Specific Requirements  
+ 
+3.1 Functional Requirements  
+ 
+ 
+The functional requirements describe the core operations and services that the 
+system Quantum-Proof Systems Scanner must perform. These requirements 
+define how the system will detect cryptographic con figurations, analyze security 
+posture, and provide actionable insights regarding quantum -safe readiness of 
+public-facing banking applications. 
+The major functional requirements of the system are as follows: 
+ 
+▪ Asset Discovery: The system shall identify and catalogue public -facing 
+applications including web servers, APIs, and VPN endpoints that are 
+exposed to the internet. 
+ 
+▪ Cryptographic Inventory Discovery : The system shall automatically 
+detect cryptographic elements such as TLS certificates, encryption 
+algorithms, cipher suites, key exchange mechanisms, and TLS protocol 
+versions used by the identi fied assets. 
+ 
+▪ Cryptographic Configuration Analysis: The system shall analyze 
+detected cryptographic configurations to identify weak, deprecated, or 
+insecure encryption mechanisms. 
+ 
+▪ Post-Quantum Cryptography Validation : The system shall evaluate the 
+detected cryptographic algorithms against Post -Quantum Cryptography 
+standards recommended by the National Institute of Standards and 
+Technology (NIST) to determine whether the asset is quantum -safe. 
+ 
+▪ CBOM Generation: The system shall generate a Cryptographic Bill of 
+Materials (CBOM) inventory that lists all cryptographic components and 
+configurations associated with public-facing applications in accordance 
+with guidelines provided by Indian Computer Emergency Response Team 
+(CERT-In). 
+ 
+▪ Risk Assessment and Rating: The system shall assign risk levels such as 
+High, Medium, or Low to each application based on the strength of its 
+cryptographic con figuration and compliance with PQC standards. 
+ 
+▪ Recommendation Engine : The system shall provide actionable 
+recommendations and remediation guidance for systems that are not 
+compliant with quantum-safe cryptographic standards.  
+ 
+▪ Dashboard Monitoring: The system should provide a centralized 
+dashboard that displays cryptographic inventory, security status, risk 
+ratings, and compliance information for all scanned assets.  
+ 
+▪ Report Generation : The system shall generate detailed reports containing 
+cryptographic inventory, vulnerability analysis, compliance status, and 
+security recommendations. 
+ 
+▪ Security Label  Generation: The system shall automatically issue digital 
+labels such as Quantum-Safe, PQC Ready, or Fully Quantum Safe for 
+applications that meet predefined security criteria. 
+ 
+ 
+3.2 External Interface Requirements  
+3.2.1 User Interfaces 
+ 
+The application shall provide a web-based user interface accessible via modern 
+web browsers such as Google Chrome, Microsoft Edge, or Mozilla Firefox.  
+The interface shall include the following components: 
+Login Interface : Secure authentication interface for system access. 
+Dashboard  Interface :  Displays  system  overview  including  scanned  
+assets, cryptographic inventory, and security status.  
+Scan Configuration Interface : Allows administrators or analysts to initiate or 
+schedule scans for public -facing applications. 
+Reports Interface : Displays detailed reports including CBOM inventory, risk 
+scores, and recommendations. 
+Security Status Indicators : Visual representation of security posture using risk 
+ratings such as High, Medium, or Low.  
+The user interface shall be designed to ensure ease of navigation, clarity of 
+information, and efficient interaction with system functionalities 
+ 
+ 
+3.3 System Features  
+ 
+• Automated Asset Discovery to identify public-facing applications and 
+internet- exposed services.  
+• Cryptographic Scanning Engine to detect encryption algorithms, 
+certificates, and cipher suites. 
+• Post-Quantum Cryptography Validator to evaluate algorithms against PQC 
+standards. 
+• Cryptographic Bill of Materials (CBOM) Generator  to create detailed 
+inventories of cryptographic assets. 
+• Risk Assessment Engine to calculate and assign risk ratings based on 
+cryptographic strength. 
+• Recommendation Engine to provide guidance for replacing insecure 
+algorithms with quantum-safe alternatives. 
+• Enterprise Monitoring Dashboard  to visualize cryptographic status and 
+security posture of all assets.  
+• Automated Reporting System to generate security reports for compliance and 
+audit purposes. 
+ 
+ 
+ 
+3.4 Non -functional Requirements  
+ 
+Non-functional requirements define system characteristics such as 
+performance, reliability, security, and usability. 
+3.4.1 Performance Requirements  
+• The system shall support scanning of multiple public-facing assets 
+simultaneously without significant performance  degradation. 
+• Cryptographic scanning and analysis should be completed within an 
+acceptable time frame depending on the number of assets being analysed.  
+• The dashboard  should update scan results and security status in near real-
+time. 
+• The system should support scalable architecture to accommodate 
+increasing numbers of assets and users.  
+ 
+ 
+3.4.2 Software Quality Attributes 
+• Security: Protection of sensitive data through secure communication 
+protocols and strong authentication mechanisms. 
+• Reliability: Ability to operate consistently without failures during scanning 
+and analysis processes.  
+• Scalability: Capability to support growing infrastructure and increasing 
+numbers of monitored assets. 
+• Maintainability: Modular architecture enabling easy updates and 
+enhancements. 
+• Usability: User-friendly interface enabling cybersecurity teams to easily 
+monitor system security posture. 
+ 
+ 
+3.4.3 Other Non -functional Requirements  
+ 
+• The system shall maintain detailed logs of all scanning activities and user 
+actions for auditing purposes. 
+• The system shall support generation of reports in machine -readable formats 
+such as JSON, XML, and CSV. 
+• The system shall support secure backup and recovery mechanisms to protect 
+stored data. 
+• The system shall maintain high availability and support disaster 
+recovery procedures to ensure continuous system operation.  
+ 
+ 
+ 
+4. Technological Requirements  
+ 
+ 
+The proposed system Quantum-Proof Systems Scanner will be developed using 
+modern web technologies and cybersecurity tools to ensure reliability, scalability, 
+and secure operation within the banking environment. The system will follow a 
+modular architecture consisting of frontend, backend, scanning engine,  and 
+database components. 
+ 
+4.1 Technologies used in development of the web application  
+ 
+• Backend  Development:  
+Python / Java will be used for implementing the core application logic, 
+cryptographic analysis modules, and scanning engine responsible for discovering 
+and analyzing public-facing assets. 
+• Frontend Development:  
+HTML5, CSS3, and JavaScript will be used to design an interactive and responsive 
+web-based user interface for the dashboard and management console.  
+• Web Framework: 
+Frameworks such as Django / Flask (Python) or Spring Boot (Java) may be used to 
+develop secure and scalable web services.  
+• API Communication:  
+ 
+RESTful APIs will be used for communication between system modules and 
+integration with external systems or security monitoring platforms.  
+• Cryptographic and Security Libraries: 
+OpenSSL libraries and TLS analysis tools will be integrated to detect 
+certificate information, encryption algorithms, cipher suites, and protocol 
+versions used by public -facing applications. 
+ 
+ 
+4.2 I.D.E. (Integrated Development Environment):  
+The development of the system will be carried out using modern Integrated 
+Development Environments (IDEs) that support efficient coding, debugging, 
+testing, and deployment. 
+Examples of IDEs that may be used include: 
+ 
+• Visual Studio Code – for frontend and backend development 
+• IntelliJ IDEA – for Java-based backend development 
+• Eclipse IDE – for enterprise-level application development 
+• PyCharm – for Python-based application development 
+ 
+ 
+These development environments provide support for debugging tools, version 
+control integration, and project management features required during the 
+development lifecycle. 
+ 
+4.3 Database Management Software:  
+The system will use a Relational Database Management System (RDBMS) to store 
+cryptographic inventory data, scanning results, user information, system logs, and 
+compliance reports. 
+ 
+Possible database systems include: 
+• PostgreSQL – for reliable and scalable enterprise database 
+management 
+• MySQL – for structured data storage and efficient query processing 
+• Oracle SQL – for enterprise-grade database deployment 
+in large banking infrastructures
+ 
+The database will maintain  records related to asset inventory, cryptographic 
+configurations, CBOM data, risk ratings, and historical scan reports. Proper 
+database security measures such as access control, encryption, and backup 
+mechanisms will be implemented to ensure data integrity and confidentiality 
+ 
+5. Security Requirements  
+ 
+Security is a critical component of the proposed system <Project Name>, as it 
+operates within a sensitive banking environment and interacts with public -facing 
+applications. The system must ensure protection of data, secure communication, 
+controlled access, and compliance with organizational and regulatory 
+cybersecurity standards.  
+The following security requirements shall be considered during the design, 
+development, deployment, and operation of the system.  
+Compatibility  with Existing IT Infrastructure  
+The proposed system must be compatible with the existing IT infrastructure of the 
+organization. Integration with current systems, networks, and security tools 
+should be performed without disrupting ongoing banking operations. The 
+implementation should ensu re that existing systems remain unaffected and 
+continue functioning normally during and after the deployment of the proposed 
+solution. 
+Audit Trails and Logging 
+The system should maintain comprehensive audit trails for all critical operations 
+and user activities. Logs must capture important details including:  
+• User ID 
+• Date and time of activity 
+• Type of operation performed  
+• System response  and status 
+ 
+All scanning results, API responses, system events, and user actions shall be 
+recorded and stored securely in the database for monitoring, analysis, and auditing 
+purposes. 
+Access Control and Authorization 
+The system shall implement strict Role -Based Access Control (RBAC) to ensure 
+that access to system functionalities and sensitive information is restricted based 
+on user roles and responsibilities.  
+Security principles such as segregation of duties and need-to-know access must be 
+enforced. For example:  
+• Only Admin Users will have permission to configure system settings 
+and schedule scans.
+ 
+ 
+• Security Analysts / PNB Checkers will be able to initiate scans and 
+view reports. 
+• Compliance Auditors will have read -only access to reports and 
+dashboards.  
+ 
+This ensures that unauthorized users cannot access sensitive data or modify 
+system configurations. 
+Recoverability  and Disaster Recovery  
+The system must support mechanisms for data recovery and disaster recovery 
+(DR) in case of system failure, data corruption, or security incidents. Regular 
+backups of system data,  logs, and configuration settings must be maintained to 
+ensure that the system can be restored to a functional state with minimal data loss. 
+❖ Compliance  with Legal and Regulatory  Requirements  
+The system must comply with applicable legal, statutory, and contractual 
+obligations related to cybersecurity, data protection, and banking regulations. The 
+system must follow industry security standards and regulatory frameworks 
+applicable to financial institutions. 
+❖ Security Risks when Connecting with External Systems 
+When interacting with external systems or public -facing applications, the system 
+must ensure that communication channels are secure and protected against 
+potential vulnerabilities. Any security vulnerabilities related to integration with 
+external systems s hall be identified through regular security assessments and 
+audits. 
+❖ Operating Environment Security 
+The operating environment of the system must maintain strong security controls  
+including secure communication protocols. All data communication between 
+system components and users must be protected using HTTPS with TLS 
+encryption (TLS 1.2 or higher)  to ensure confidentiality and integrity of 
+transmitted information. 
+ 
+❖ Cost of Security Implementation  
+The overall cost of implementing and maintaining security measures throughout 
+the lifecycle of the system must be considered. This includes costs related to:  
+• Hardware infrastructure required for secure deployment 
+• Software tools and security frameworks 
+• Personnel responsible for system monitoring and maintenance 
+• Training programs for users and administrators and resource 
+ 
+Annexure-A (CERT-In CBOM Elements) 
+The system shall generate a Cryptographic Bill of Materials (CBOM) containing minimum 
+cryptographic asset elements as recommended by Indian Computer Emergency Response 
+Team (CERT-In). The CBOM helps identify cryptographic algorithms, keys, protocols, and 
+certificates used by public-facing applications. 
+The minimum CBOM elements are described below. 
+1. Algorithms 
+ 
+Cryptographic Asset 
+Type 
+Element Description 
+Algorithms Name Name of the cryptographic algorithm or asset. 
+Example: AES-128-GCM. 
+Algorithms Asset Type Speci f ies  type  of  cryptographic  asset  
+Algorithms Primitive Describes cryptographic primitive such as 
+SHA512withRSA. 
+Algorithms Mode Operational mode used by the algorithm such as 
+GCM for AES encryption.  
+ 
+ 
+2. Cryptographic Functions 
+ 
+C ry pt o gra p h ic 
+Asset Type 
+Element Description 
+Crypto Functions Crypto 
+Functions 
+Lists functions supported such as key 
+generation, encryption, decryption, and 
+authentication tag generation. 
+Crypto Functions C las s ical 
+Security Level 
+Indicates the classical security strength of the 
+algorithm (e.g., AES-128 = 128 bits). 
+Crypto Functions OID Object Identifier used to uniquely identify 
+cryptographic algorithms. 
+Crypto Functions List List of cryptographic algorithms supported by 
+the system. 
+ 
+3. Keys 
+ 
+Cryptographic Asset 
+Type 
+Element Description 
+Keys Name Name of the cryptographic key. 
+Keys Asset Type Type of asset (key). 
+Keys ID Unique identifier or reference  number for the 
+Keys State State of the key such as active, revoked, or 
+Keys Size Size of the key measured in bits (e.g., 128-bit 
+AES key, 2048-bit RSA key). 
+Keys C r e a t i o n 
+Date 
+Date when the key was created. 
+Keys Ac  t iva  t i o n 
+Date 
+Date when the key became operational. 
+ 
+ 
+4. Protocols 
+ 
+Cryptographic Asset 
+Type 
+Element Description 
+Protocols Name Name of the cryptographic protocol such as 
+TLS, IPSec, or SSH.  
+Protocols Asset Type Specifies the asset type as protocol. 
+Protocols Version Version of the protocol used such as TLS 1.2 or 
+TLS 1.3. 
+Protocols C i p h e r 
+Suites 
+Set of cryptographic algorithms supported by 
+the protocol. 
+Protocols OID Object Identifier associated with the protocol 
+specification. 
+ 
+5. Certificates 
+ 
+C r y p to gra p h i c  
+Asset Type 
+Element Description 
+Certificates Name Name of the certificate representing the 
+entity (e.g., website). 
+Certificates Asset Type Specifies the asset type as certificate. 
+Certificates Subject Name Distinguished Name (DN) of the entity 
+identified by the certificate. 
+Certificates Issuer Name Certificate Authority that issued the 
+certificate. 
+Certificates Not Valid Before Date  from  which  certificate  validity 
+Certificates Not Valid After Expiry date of the certificate. 
+Certificates Signature Algorithm 
+Reference 
+Algorithm used to sign the certificate 
+with its OID. 
+Certificates Subject Public Key 
+Reference 
+Reference to the subject public key and 
+its algorithm. 
+Certificates Certificate Format Format of certificate such as X.509. 
+Certificates Certificate Extension File extension of certificate such as .crt. 
+ 
